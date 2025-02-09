@@ -1,0 +1,296 @@
+/*Andy Bell reset*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+	margin: 0;
+	padding: 0;
+	font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+	--clr-primary: red;
+}
+
+html {
+	font-size: 10px;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* Utility classes */
+.ff {
+	font-family: "Shadows Into Light", serif;
+}
+
+/* Styling for the header section */
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem;
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+	flex-wrap: wrap;
+	background: rgba(255, 255, 255, 0.6);
+}
+
+.header-logo-box > h1 {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.header-nav-menu-box {
+	margin-inline: 2rem;
+	display: flex;
+	justify-content: end;
+}
+
+.header-nav-menu-box > input {
+	display: none;
+}
+
+.header-nav-menu {
+	display: none;
+}
+
+.header-nav-toggle:checked ~ nav {
+	display: block;
+}
+
+.header-nav-list {
+	list-style-type: none;
+	padding: 1rem;
+	position: absolute;
+	right: 0;
+	top: 100%;
+	width: 60vw;
+	background: rgba(255, 255, 255, 0.85);
+}
+
+.header-nav-list > li {
+	padding-inline: 1rem;
+}
+
+.header-nav-list li > a {
+	text-decoration: none;
+	color: black;
+	font-size: 1.6rem;
+	padding-inline: 1rem;
+	padding-block: 0.5rem;
+	display: block;
+}
+
+.header-nav-list li > a:hover {
+	background: rgba(0, 0, 0, 0.85);
+	color: white;
+	border-radius: 4px;
+}
+
+.header-nav-menu-box label span img {
+	width: 3rem;
+}
+
+.header-nav-menu-box .header-nav-menu .header-nav-list li > .current-tab {
+	background: red;
+	opacity: 0.85;
+	color: white;
+	border-radius: 4px;
+}
+
+.header-search-box {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-item: center;
+}
+
+.header-search-box .header-search-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+
+.header-search-form {
+	width: 100%;
+	margin-inline: 2rem;
+	border-radius: 2rem;
+}
+
+.header-search-box-text {
+	background: rgba(0, 0, 0, 0.05);
+	border: none;
+	border-radius: 1.5rem;
+	font-size: 1.6rem;
+	padding-inline: 1rem;
+	padding-block: 0.5rem;
+	color: black;
+	width: 22rem;
+}
+
+.header-search-box-text::placeholder {
+	color: black;
+}
+
+.header-search-icon-box {
+	width: 3.6rem;
+	height: 3.6rem;
+	background: rgba(0, 0, 0, 0.05);
+	border-radius: 1.8rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.header-search-icon-box > img {
+	width: 2.5rem;
+	height: 2.5rem;
+}
+
+@media screen and (min-width: 600px) {
+	
+	.header-search-box .header-search-form {
+		display: flex;
+		justify-content: end;
+	}
+	
+}
+
+@media screen and (min-width: 800px) {
+	header {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+	
+	.header-logo-box {
+		grid-column: 1/2;
+		grid-row: 1/2;
+	}
+	
+	.header-nav-menu-box {
+		grid-column: 1/3;
+		grid-row: 2/3;
+		display: flex;
+		justify-content: center;
+	}
+	
+	.header-search-box {
+		grid-column: 2/3;
+		grid-row: 1/2;
+	}
+	
+	.header-nav-menu {
+		display: block;
+	}
+	
+	.header-nav-list {
+		all: unset;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		list-style-type: none;
+		margin-top: 0.5rem;
+	}
+	
+	.header-nav-menu-box > label {
+		display: none;
+	}
+}
+
+/* main section styles */
+
+.main-container {
+	padding-top: 9rem;
+}
+
+.recipes {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.recipes .recipes-heading {
+	padding-top: 2rem;
+	text-align: center;
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: black;
+}
+
+.trending-recipe img {
+	width: 100%;
+}
+
+.trending-recipe-heading {
+	padding-top: 1rem;
+	text-align: center;
+	font-size: 2.5rem;
+	font-weight: 600;
+}
+
+.other-trending-recipes {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
